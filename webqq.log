@@ -1,0 +1,148 @@
+2013-07-26 17:08:37,899 INFO [org.eclipse.jetty.server.Server] - jetty-8.1.8.v20121106
+2013-07-26 17:08:38,025 INFO [org.eclipse.jetty.webapp.StandardDescriptorProcessor] - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+2013-07-26 17:08:38,064 INFO [org.eclipse.jetty.server.handler.ContextHandler] - started o.e.j.w.WebAppContext{/,file:/D:/myworkspace/webqq-client/src/main/webapp/},src/main/webapp
+2013-07-26 17:08:38,064 INFO [org.eclipse.jetty.server.handler.ContextHandler] - started o.e.j.w.WebAppContext{/,file:/D:/myworkspace/webqq-client/src/main/webapp/},src/main/webapp
+2013-07-26 17:08:38,075 INFO [/] - Initializing Spring root WebApplicationContext
+2013-07-26 17:08:38,075 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
+2013-07-26 17:08:38,147 INFO [org.springframework.web.context.support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Fri Jul 26 17:08:38 CST 2013]; root of context hierarchy
+2013-07-26 17:08:38,193 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from URL [file:/D:/myworkspace/webqq-client/target/classes/applicationContext.xml]
+2013-07-26 17:08:38,367 INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4c06df93: defining beans [heartbeatTask,threadPoolTaskScheduler,heartbeatTaskExecutor,webQQClient,httpService,eventPublisher,pollListener,receiveMessageThead,checkQQAction,loginQQAction,channelLoginAction,completedLoginAction,logoutQQAction,heartbeatAction,findFriendsAction,findFriendAccountAction,sendMessageToFriendAction,sendMessageToGroupAction,loadFriendAction,loadQQSignatureAction,loadQQLevelAction,completedFindFriendsAction,findOnlineFriendsAction,findQQGroupsAction,loadQQGroupsNumberAction,completedFindQQGroupsAction,changeMemberStatusAction,receiveMessageAction,loginActions,heartbeatActions,logoutActions,receiveMsgActions,findFriendsActions,loadFriendActions,loadFriendSignatureActions,loadFriendLevelActions,findOnlineFriendsActions,findGroupsActions,changeStatusActions,sendMessageToFriendActions,sendMessageToGroupActions,actionsExecutor,chatRobot,config,webqqApp]; root of factory hierarchy
+2013-07-26 17:08:38,658 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] - Initializing ExecutorService  'threadPoolTaskScheduler'
+2013-07-26 17:08:38,673 INFO [org.okj.im.core.event.WebQQEventPublisher] - 注册监听器完成, 当前监听器集合大小, listener.size=1
+2013-07-26 17:08:38,746 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization completed in 671 ms
+2013-07-26 17:08:38,746 INFO [org.eclipse.jetty.server.handler.ContextHandler] - started o.e.j.w.WebAppContext{/,file:/D:/myworkspace/webqq-client/src/main/webapp/},src/main/webapp
+2013-07-26 17:08:38,746 INFO [org.eclipse.jetty.server.handler.ContextHandler] - started o.e.j.w.WebAppContext{/,file:/D:/myworkspace/webqq-client/src/main/webapp/},src/main/webapp
+2013-07-26 17:08:38,746 INFO [org.okj.im.core.task.HeartbeatTaskExecutor] - 开始执行定时心跳任务, cron=0/5 * * * * ?
+2013-07-26 17:08:38,751 INFO [org.eclipse.jetty.server.handler.ContextHandler] - started o.e.j.w.WebAppContext{/,file:/D:/myworkspace/webqq-client/src/main/webapp/},src/main/webapp
+2013-07-26 17:08:38,793 INFO [org.eclipse.jetty.server.AbstractConnector] - Started SelectChannelConnector@0.0.0.0:8080
+2013-07-26 17:08:40,027 INFO [org.okj.commons.service.action.BizAction] - action开始执行，action=CheckQQAction, context.id=fcaa04cc-0cfd-4f04-b53e-f17dad92f92b, bizCode=QQ_LOGIN
+2013-07-26 17:08:40,027 INFO [org.okj.im.core.actions.DefaultBizAction] - QQ登录账户信息, member=org.okj.im.model.Member@15d5576c
+2013-07-26 17:08:40,027 INFO [org.okj.im.core.actions.DefaultBizAction] - 检查QQ登录账户的请求URL, url=http://check.ptlogin2.qq.com/check?uin=1035571211&appid=1003903&r=0.2852257210538822
+2013-07-26 17:08:41,635 WARN [org.okj.im.core.service.QQHttpService] - Connect OK! status：200
+2013-07-26 17:08:41,642 INFO [org.okj.im.core.actions.DefaultBizAction] - 获取检查QQ登录账户的响应, result=ptui_checkVC('1','50ee19a6cd602885caf7a0437ac7764b29145290c23ba6b6','\x00\x00\x00\x00\x3d\xb9\x90\x0b');
+2013-07-26 17:08:41,643 INFO [org.okj.im.core.actions.DefaultBizAction] - 解析账号验证码返回结果,CheckType=1, VerifyCode=50ee19a6cd602885caf7a0437ac7764b29145290c23ba6b6, VerifyCodeHex=\x00\x00\x00\x00\x3d\xb9\x90\x0b, groupCount=3
+2013-07-26 17:08:41,643 INFO [org.okj.commons.service.action.BizAction] - action执行结束[耗时：1,616 ms]，，action=CheckQQAction, context.id=fcaa04cc-0cfd-4f04-b53e-f17dad92f92b, bizCode=QQ_LOGIN
+2013-07-26 17:08:41,644 INFO [org.okj.commons.service.action.BizAction] - action开始执行，action=LoginQQAction, context.id=fcaa04cc-0cfd-4f04-b53e-f17dad92f92b, bizCode=QQ_LOGIN
+2013-07-26 17:08:41,734 INFO [org.okj.im.core.actions.DefaultBizAction] - QQ登录的请求URL, url=http://ptlogin2.qq.com/login?u=1035571211&p=21A176FCD2CCFDB82E7E7A361586CD10&verifycode=50EE19A6CD602885CAF7A0437AC7764B29145290C23BA6B6&webqq_type=10&remember_uin=1&login2qq=1&aid=1003903&u1=http%3A%2F%2Fweb3.qq.com%2Floginproxy.html%3Flogin2qq%3D1%26webqq_type%3D10&h=1&ptredirect=0&ptlang=2052&from_ui=1&pttype=1&dumy=&fp=loginerroralert&action=7-24-1937704&mibao_css=m_webqq&t=1&g=1
+2013-07-26 17:08:42,990 WARN [org.okj.im.core.service.QQHttpService] - Connect OK! status：200
+2013-07-26 17:08:42,991 INFO [org.okj.im.core.actions.DefaultBizAction] - 获取QQ登录的响应, result=ptuiCB('7','0','','0','很遗憾，网络连接出现异常，请您稍后再试。(618664190)', '1035571211');
+2013-07-26 17:08:42,991 INFO [org.okj.im.core.actions.DefaultBizAction] - 获取cookies值, cookies=ptisp=os; PATH=/; DOMAIN=qq.com;confirmuin=0; PATH=/; DOMAIN=ptlogin2.qq.com;ptisp=os; PATH=/; DOMAIN=qq.com;confirmuin=0; PATH=/; DOMAIN=ptlogin2.qq.com;
+2013-07-26 17:08:42,993 ERROR [org.okj.im.WebQQClient] - WebQQ Client调用发生异常
+[QQ_LOGIN_FAIL]WebQQ登录失败org.okj.commons.service.action.ActionException: WebQQ登录失败
+	at org.okj.im.core.actions.LoginQQAction.after(LoginQQAction.java:87)
+	at org.okj.commons.service.action.AbstractBizAction.execute(AbstractBizAction.java:50)
+	at org.okj.commons.service.action.Actions.executeActions(Actions.java:24)
+	at org.okj.commons.service.action.SimpleActionsExecutor.doExecuteWithoutTransaction(SimpleActionsExecutor.java:45)
+	at org.okj.commons.service.action.SimpleActionsExecutor.execute(SimpleActionsExecutor.java:38)
+	at org.okj.im.SimpleWebQQClient.executeActions(SimpleWebQQClient.java:214)
+	at org.okj.im.SimpleWebQQClient.login(SimpleWebQQClient.java:58)
+	at org.okj.im.WebQQApp.start(WebQQApp.java:53)
+	at org.okj.im.core.task.HeartbeatTask.checkLogin(HeartbeatTask.java:76)
+	at org.okj.im.core.task.HeartbeatTask.run(HeartbeatTask.java:61)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:53)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:178)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:292)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2013-07-26 17:08:42,996 WARN [org.okj.im.WebQQApp] - 启动WebQQ客户端失败, account=1035571211
+2013-07-26 17:08:45,001 INFO [org.okj.commons.service.action.BizAction] - action开始执行，action=CheckQQAction, context.id=580c8c0f-f89b-4cf8-afec-a84f4e94e2d3, bizCode=QQ_LOGIN
+2013-07-26 17:08:45,001 INFO [org.okj.im.core.actions.DefaultBizAction] - QQ登录账户信息, member=org.okj.im.model.Member@7f5f9a23
+2013-07-26 17:08:45,001 INFO [org.okj.im.core.actions.DefaultBizAction] - 检查QQ登录账户的请求URL, url=http://check.ptlogin2.qq.com/check?uin=1035571211&appid=1003903&r=0.7317334730448425
+2013-07-26 17:08:46,098 WARN [org.okj.im.core.service.QQHttpService] - Connect OK! status：200
+2013-07-26 17:08:46,099 INFO [org.okj.im.core.actions.DefaultBizAction] - 获取检查QQ登录账户的响应, result=ptui_checkVC('1','8c2a73ad904b32533a421e34a4ce99558d3e87132c82ae60','\x00\x00\x00\x00\x3d\xb9\x90\x0b');
+2013-07-26 17:08:46,100 INFO [org.okj.im.core.actions.DefaultBizAction] - 解析账号验证码返回结果,CheckType=1, VerifyCode=8c2a73ad904b32533a421e34a4ce99558d3e87132c82ae60, VerifyCodeHex=\x00\x00\x00\x00\x3d\xb9\x90\x0b, groupCount=3
+2013-07-26 17:08:46,100 INFO [org.okj.commons.service.action.BizAction] - action执行结束[耗时：1,099 ms]，，action=CheckQQAction, context.id=580c8c0f-f89b-4cf8-afec-a84f4e94e2d3, bizCode=QQ_LOGIN
+2013-07-26 17:08:46,100 INFO [org.okj.commons.service.action.BizAction] - action开始执行，action=LoginQQAction, context.id=580c8c0f-f89b-4cf8-afec-a84f4e94e2d3, bizCode=QQ_LOGIN
+2013-07-26 17:08:46,202 INFO [org.okj.im.core.actions.DefaultBizAction] - QQ登录的请求URL, url=http://ptlogin2.qq.com/login?u=1035571211&p=692066AEB8FA5FFDDC2A3C935DAC6833&verifycode=8C2A73AD904B32533A421E34A4CE99558D3E87132C82AE60&webqq_type=10&remember_uin=1&login2qq=1&aid=1003903&u1=http%3A%2F%2Fweb3.qq.com%2Floginproxy.html%3Flogin2qq%3D1%26webqq_type%3D10&h=1&ptredirect=0&ptlang=2052&from_ui=1&pttype=1&dumy=&fp=loginerroralert&action=7-24-1937704&mibao_css=m_webqq&t=1&g=1
+2013-07-26 17:08:47,001 WARN [org.okj.im.core.service.QQHttpService] - Connect OK! status：200
+2013-07-26 17:08:47,001 INFO [org.okj.im.core.actions.DefaultBizAction] - 获取QQ登录的响应, result=ptuiCB('7','0','','0','很遗憾，网络连接出现异常，请您稍后再试。(278925316)', '1035571211');
+2013-07-26 17:08:47,002 INFO [org.okj.im.core.actions.DefaultBizAction] - 获取cookies值, cookies=ptisp=os; PATH=/; DOMAIN=qq.com;confirmuin=0; PATH=/; DOMAIN=ptlogin2.qq.com;ptisp=os; PATH=/; DOMAIN=qq.com;confirmuin=0; PATH=/; DOMAIN=ptlogin2.qq.com;ptisp=os; PATH=/; DOMAIN=qq.com;confirmuin=0; PATH=/; DOMAIN=ptlogin2.qq.com;ptisp=os; PATH=/; DOMAIN=qq.com;confirmuin=0; PATH=/; DOMAIN=ptlogin2.qq.com;ptisp=os; PATH=/; DOMAIN=qq.com;confirmuin=0; PATH=/; DOMAIN=ptlogin2.qq.com;ptisp=os; PATH=/; DOMAIN=qq.com;confirmuin=0; PATH=/; DOMAIN=ptlogin2.qq.com;
+2013-07-26 17:08:47,002 ERROR [org.okj.im.WebQQClient] - WebQQ Client调用发生异常
+[QQ_LOGIN_FAIL]WebQQ登录失败org.okj.commons.service.action.ActionException: WebQQ登录失败
+	at org.okj.im.core.actions.LoginQQAction.after(LoginQQAction.java:87)
+	at org.okj.commons.service.action.AbstractBizAction.execute(AbstractBizAction.java:50)
+	at org.okj.commons.service.action.Actions.executeActions(Actions.java:24)
+	at org.okj.commons.service.action.SimpleActionsExecutor.doExecuteWithoutTransaction(SimpleActionsExecutor.java:45)
+	at org.okj.commons.service.action.SimpleActionsExecutor.execute(SimpleActionsExecutor.java:38)
+	at org.okj.im.SimpleWebQQClient.executeActions(SimpleWebQQClient.java:214)
+	at org.okj.im.SimpleWebQQClient.login(SimpleWebQQClient.java:58)
+	at org.okj.im.WebQQApp.start(WebQQApp.java:53)
+	at org.okj.im.core.task.HeartbeatTask.checkLogin(HeartbeatTask.java:76)
+	at org.okj.im.core.task.HeartbeatTask.run(HeartbeatTask.java:61)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:53)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:178)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:292)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2013-07-26 17:08:47,003 WARN [org.okj.im.WebQQApp] - 启动WebQQ客户端失败, account=1035571211
+2013-07-29 10:33:56,908 INFO [org.eclipse.jetty.server.Server] - jetty-8.1.8.v20121106
+2013-07-29 10:33:57,074 INFO [org.eclipse.jetty.webapp.StandardDescriptorProcessor] - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+2013-07-29 10:33:57,118 INFO [org.eclipse.jetty.server.handler.ContextHandler] - started o.e.j.w.WebAppContext{/,file:/D:/myworkspace/webqq-client/src/main/webapp/},src/main/webapp
+2013-07-29 10:33:57,118 INFO [org.eclipse.jetty.server.handler.ContextHandler] - started o.e.j.w.WebAppContext{/,file:/D:/myworkspace/webqq-client/src/main/webapp/},src/main/webapp
+2013-07-29 10:33:57,130 INFO [/] - Initializing Spring root WebApplicationContext
+2013-07-29 10:33:57,130 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
+2013-07-29 10:33:57,208 INFO [org.springframework.web.context.support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon Jul 29 10:33:57 CST 2013]; root of context hierarchy
+2013-07-29 10:33:57,268 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from URL [file:/D:/myworkspace/webqq-client/target/classes/applicationContext.xml]
+2013-07-29 10:33:57,475 INFO [org.springframework.beans.factory.support.DefaultListableBeanFactory] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4001e1d5: defining beans [heartbeatTask,threadPoolTaskScheduler,heartbeatTaskExecutor,webQQClient,httpService,eventPublisher,pollListener,receiveMessageThead,checkQQAction,loginQQAction,channelLoginAction,completedLoginAction,logoutQQAction,heartbeatAction,findFriendsAction,findFriendAccountAction,sendMessageToFriendAction,sendMessageToGroupAction,loadFriendAction,loadQQSignatureAction,loadQQLevelAction,completedFindFriendsAction,findOnlineFriendsAction,findQQGroupsAction,loadQQGroupsNumberAction,completedFindQQGroupsAction,changeMemberStatusAction,receiveMessageAction,loginActions,heartbeatActions,logoutActions,receiveMsgActions,findFriendsActions,loadFriendActions,loadFriendSignatureActions,loadFriendLevelActions,findOnlineFriendsActions,findGroupsActions,changeStatusActions,sendMessageToFriendActions,sendMessageToGroupActions,actionsExecutor,chatRobot,config,webqqApp]; root of factory hierarchy
+2013-07-29 10:33:57,778 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] - Initializing ExecutorService  'threadPoolTaskScheduler'
+2013-07-29 10:33:57,793 INFO [org.okj.im.core.event.WebQQEventPublisher] - 注册监听器完成, 当前监听器集合大小, listener.size=1
+2013-07-29 10:33:57,870 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization completed in 740 ms
+2013-07-29 10:33:57,870 INFO [org.eclipse.jetty.server.handler.ContextHandler] - started o.e.j.w.WebAppContext{/,file:/D:/myworkspace/webqq-client/src/main/webapp/},src/main/webapp
+2013-07-29 10:33:57,870 INFO [org.eclipse.jetty.server.handler.ContextHandler] - started o.e.j.w.WebAppContext{/,file:/D:/myworkspace/webqq-client/src/main/webapp/},src/main/webapp
+2013-07-29 10:33:57,870 INFO [org.okj.im.core.task.HeartbeatTaskExecutor] - 开始执行定时心跳任务, cron=0/5 * * * * ?
+2013-07-29 10:33:57,875 INFO [org.eclipse.jetty.server.handler.ContextHandler] - started o.e.j.w.WebAppContext{/,file:/D:/myworkspace/webqq-client/src/main/webapp/},src/main/webapp
+2013-07-29 10:33:57,920 INFO [org.eclipse.jetty.server.AbstractConnector] - Started SelectChannelConnector@0.0.0.0:8080
+2013-07-29 10:34:00,031 INFO [org.okj.commons.service.action.BizAction] - action开始执行，action=CheckQQAction, context.id=2ab85308-f681-4ee4-a42d-cec150ef7d31, bizCode=QQ_LOGIN
+2013-07-29 10:34:00,031 INFO [org.okj.im.core.actions.DefaultBizAction] - QQ登录账户信息, member=org.okj.im.model.Member@f226a42
+2013-07-29 10:34:00,032 INFO [org.okj.im.core.actions.DefaultBizAction] - 检查QQ登录账户的请求URL, url=http://check.ptlogin2.qq.com/check?uin=1035571211&appid=1003903&r=0.8110120466505434
+2013-07-29 10:34:01,452 WARN [org.okj.im.core.service.QQHttpService] - Connect OK! status：200
+2013-07-29 10:34:01,489 INFO [org.okj.im.core.actions.DefaultBizAction] - 获取检查QQ登录账户的响应, result=ptui_checkVC('1','7abf459ac6fbdc7452002c0954037eb848224d1f7e68ac6b','\x00\x00\x00\x00\x3d\xb9\x90\x0b');
+2013-07-29 10:34:01,490 INFO [org.okj.im.core.actions.DefaultBizAction] - 解析账号验证码返回结果,CheckType=1, VerifyCode=7abf459ac6fbdc7452002c0954037eb848224d1f7e68ac6b, VerifyCodeHex=\x00\x00\x00\x00\x3d\xb9\x90\x0b, groupCount=3
+2013-07-29 10:34:01,491 INFO [org.okj.commons.service.action.BizAction] - action执行结束[耗时：1,459 ms]，，action=CheckQQAction, context.id=2ab85308-f681-4ee4-a42d-cec150ef7d31, bizCode=QQ_LOGIN
+2013-07-29 10:34:01,491 INFO [org.okj.commons.service.action.BizAction] - action开始执行，action=LoginQQAction, context.id=2ab85308-f681-4ee4-a42d-cec150ef7d31, bizCode=QQ_LOGIN
+2013-07-29 10:34:01,619 INFO [org.okj.im.core.actions.DefaultBizAction] - QQ登录的请求URL, url=http://ptlogin2.qq.com/login?u=1035571211&p=6F3AD2546AED5B15C8EF1B5D3E2C40E8&verifycode=7ABF459AC6FBDC7452002C0954037EB848224D1F7E68AC6B&webqq_type=10&remember_uin=1&login2qq=1&aid=1003903&u1=http%3A%2F%2Fweb3.qq.com%2Floginproxy.html%3Flogin2qq%3D1%26webqq_type%3D10&h=1&ptredirect=0&ptlang=2052&from_ui=1&pttype=1&dumy=&fp=loginerroralert&action=7-24-1937704&mibao_css=m_webqq&t=1&g=1
+2013-07-29 10:34:02,899 WARN [org.okj.im.core.service.QQHttpService] - Connect OK! status：200
+2013-07-29 10:34:02,900 INFO [org.okj.im.core.actions.DefaultBizAction] - 获取QQ登录的响应, result=ptuiCB('7','0','','0','很遗憾，网络连接出现异常，请您稍后再试。(377488810)', '1035571211');
+2013-07-29 10:34:02,900 INFO [org.okj.im.core.actions.DefaultBizAction] - 获取cookies值, cookies=ptisp=os; PATH=/; DOMAIN=qq.com;confirmuin=0; PATH=/; DOMAIN=ptlogin2.qq.com;ptisp=os; PATH=/; DOMAIN=qq.com;confirmuin=0; PATH=/; DOMAIN=ptlogin2.qq.com;
+2013-07-29 10:34:02,904 ERROR [org.okj.im.WebQQClient] - WebQQ Client调用发生异常
+[QQ_LOGIN_FAIL]WebQQ登录失败org.okj.commons.service.action.ActionException: WebQQ登录失败
+	at org.okj.im.core.actions.LoginQQAction.after(LoginQQAction.java:87)
+	at org.okj.commons.service.action.AbstractBizAction.execute(AbstractBizAction.java:50)
+	at org.okj.commons.service.action.Actions.executeActions(Actions.java:24)
+	at org.okj.commons.service.action.SimpleActionsExecutor.doExecuteWithoutTransaction(SimpleActionsExecutor.java:45)
+	at org.okj.commons.service.action.SimpleActionsExecutor.execute(SimpleActionsExecutor.java:38)
+	at org.okj.im.SimpleWebQQClient.executeActions(SimpleWebQQClient.java:214)
+	at org.okj.im.SimpleWebQQClient.login(SimpleWebQQClient.java:58)
+	at org.okj.im.WebQQApp.start(WebQQApp.java:53)
+	at org.okj.im.core.task.HeartbeatTask.checkLogin(HeartbeatTask.java:76)
+	at org.okj.im.core.task.HeartbeatTask.run(HeartbeatTask.java:61)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:53)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:178)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:292)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2013-07-29 10:34:02,908 WARN [org.okj.im.WebQQApp] - 启动WebQQ客户端失败, account=1035571211
+2013-07-29 10:34:05,001 INFO [org.okj.commons.service.action.BizAction] - action开始执行，action=CheckQQAction, context.id=cd97ad09-493e-473a-8048-d99d72ff783e, bizCode=QQ_LOGIN
+2013-07-29 10:34:05,001 INFO [org.okj.im.core.actions.DefaultBizAction] - QQ登录账户信息, member=org.okj.im.model.Member@164a8dde
+2013-07-29 10:34:05,001 INFO [org.okj.im.core.actions.DefaultBizAction] - 检查QQ登录账户的请求URL, url=http://check.ptlogin2.qq.com/check?uin=1035571211&appid=1003903&r=0.7297984475144951
+2013-07-29 10:34:05,967 WARN [org.okj.im.core.service.QQHttpService] - Connect OK! status：200
+2013-07-29 10:34:05,968 INFO [org.okj.im.core.actions.DefaultBizAction] - 获取检查QQ登录账户的响应, result=ptui_checkVC('1','61cf751ec25eb219f3a7a5fb9e2beb88f7124321919eb04e','\x00\x00\x00\x00\x3d\xb9\x90\x0b');
+2013-07-29 10:34:05,968 INFO [org.okj.im.core.actions.DefaultBizAction] - 解析账号验证码返回结果,CheckType=1, VerifyCode=61cf751ec25eb219f3a7a5fb9e2beb88f7124321919eb04e, VerifyCodeHex=\x00\x00\x00\x00\x3d\xb9\x90\x0b, groupCount=3
+2013-07-29 10:34:05,969 INFO [org.okj.commons.service.action.BizAction] - action执行结束[耗时：968 ms]，，action=CheckQQAction, context.id=cd97ad09-493e-473a-8048-d99d72ff783e, bizCode=QQ_LOGIN
+2013-07-29 10:34:05,969 INFO [org.okj.commons.service.action.BizAction] - action开始执行，action=LoginQQAction, context.id=cd97ad09-493e-473a-8048-d99d72ff783e, bizCode=QQ_LOGIN
+2013-07-29 10:34:06,075 INFO [org.okj.im.core.actions.DefaultBizAction] - QQ登录的请求URL, url=http://ptlogin2.qq.com/login?u=1035571211&p=BAAA1CBB1681F5C57F195B7BCBC48F52&verifycode=61CF751EC25EB219F3A7A5FB9E2BEB88F7124321919EB04E&webqq_type=10&remember_uin=1&login2qq=1&aid=1003903&u1=http%3A%2F%2Fweb3.qq.com%2Floginproxy.html%3Flogin2qq%3D1%26webqq_type%3D10&h=1&ptredirect=0&ptlang=2052&from_ui=1&pttype=1&dumy=&fp=loginerroralert&action=7-24-1937704&mibao_css=m_webqq&t=1&g=1

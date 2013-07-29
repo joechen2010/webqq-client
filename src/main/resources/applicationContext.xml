@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byName">
+	<!-- 心跳任务(5秒钟检查一次) -->
+	<bean id="heartbeatTask" class="org.okj.im.core.task.HeartbeatTask">
+		<property name="cronExpression" value="0/5 * * * * ?"/>
+	</bean>
+	
+	<!-- 任务线程池(默认10个线程) -->
+	<bean id="threadPoolTaskScheduler" class="org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler">
+		<property name="poolSize" value="10"/>
+	</bean>
+	
+	<!-- 心跳任务执行器 -->
+	<bean id="heartbeatTaskExecutor" class="org.okj.im.core.task.HeartbeatTaskExecutorImpl"/>
+	
+	<!-- webQQ客户端 -->
+	<bean id="webQQClient" class="org.okj.im.SimpleWebQQClient"/>
+	
+	<!-- QQ的httpclient服务 -->
+	<bean id="httpService" class="org.okj.im.core.service.QQHttpService">
+	    <property name="proxyHost" value="www-proxy.ericsson.se"/>
+	    <property name="proxyPort" value="8080"/>
+	</bean>
+	   
+	
+	<!-- QQ事件发布器 -->
+	<bean id="eventPublisher" class="org.okj.im.core.event.SimpleWebQQEventPublisher">
+	    <property name="listeners">
+			<list>
+				<ref bean="pollListener"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="pollListener" class="org.okj.im.core.event.PollListener"/>
+	
+	<bean id="receiveMessageThead" class="org.okj.im.core.task.ReceiveMessageThead"/>
+	
+	<!-- action定义 -->
+	<bean id="checkQQAction" class="org.okj.im.core.actions.CheckQQAction"/>
+	<bean id="loginQQAction" class="org.okj.im.core.actions.LoginQQAction"/>
+	<bean id="channelLoginAction" class="org.okj.im.core.actions.ChannelLoginAction"/>
+	<bean id="completedLoginAction" class="org.okj.im.core.actions.CompletedLoginAction"/>
+	<bean id="logoutQQAction" class="org.okj.im.core.actions.LogoutQQAction"/>
+	<bean id="heartbeatAction" class="org.okj.im.core.actions.HeartbeatAction"/>
+	<bean id="findFriendsAction" class="org.okj.im.core.actions.FindFriendsAction"/>
+	<bean id="findFriendAccountAction" class="org.okj.im.core.actions.FindFriendAccountAction"/>
+	<bean id="sendMessageToFriendAction" class="org.okj.im.core.actions.SendMessageToFriendAction"/>
+	<bean id="sendMessageToGroupAction" class="org.okj.im.core.actions.SendMessageToGroupAction"/>
+	<bean id="loadFriendAction" class="org.okj.im.core.actions.LoadFriendAction"/>
+	<bean id="loadQQSignatureAction" class="org.okj.im.core.actions.LoadQQSignatureAction"/>
+	<bean id="loadQQLevelAction" class="org.okj.im.core.actions.LoadQQLevelAction"/>
+	<bean id="completedFindFriendsAction" class="org.okj.im.core.actions.CompletedFindFriendsAction"/>
+	<bean id="findOnlineFriendsAction" class="org.okj.im.core.actions.FindOnlineFriendsAction"/>
+	<bean id="findQQGroupsAction" class="org.okj.im.core.actions.FindQQGroupsAction"/>
+	<bean id="loadQQGroupsNumberAction" class="org.okj.im.core.actions.LoadQQGroupsNumberAction"/>
+	<bean id="completedFindQQGroupsAction" class="org.okj.im.core.actions.CompletedFindQQGroupsAction"/>
+	<bean id="changeMemberStatusAction" class="org.okj.im.core.actions.ChangeMemberStatusAction"/>
+	<bean id="receiveMessageAction" class="org.okj.im.core.actions.ReceiveMessageAction"/>
+	
+	<!-- webqq登录的actions -->
+	<bean id="loginActions" class="org.okj.commons.service.action.Actions">
+		<property name="bizCode" value="QQ_LOGIN"/>
+		<property name="actions">
+			<list>
+				<ref bean="checkQQAction"/>
+				<ref bean="loginQQAction"/>
+				<ref bean="channelLoginAction"/>
+				<ref bean="completedLoginAction"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- webqq心跳检测的actions -->
+	<bean id="heartbeatActions" class="org.okj.commons.service.action.Actions">
+		<property name="bizCode" value="QQ_CHECK_HEARTBEAT"/>
+		<property name="actions">
+			<list>
+				<ref bean="heartbeatAction"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- webqq登出的actions -->
+	<bean id="logoutActions" class="org.okj.commons.service.action.Actions">
+		<property name="bizCode" value="QQ_LOGOUT"/>
+		<property name="actions">
+			<list>
+				<ref bean="logoutQQAction"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="receiveMsgActions" class="org.okj.commons.service.action.Actions">
+		<property name="bizCode" value="RECEIVE_MESSAGE"/>
+		<property name="actions">
+			<list>
+				<ref bean="receiveMessageAction"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 查找好友列表的actions -->
+	<bean id="findFriendsActions" class="org.okj.commons.service.action.Actions">
+		<property name="bizCode" value="QQ_FIND_FRIENDS"/>
+		<property name="actions">
+			<list>
+				<ref bean="findFriendsAction"/>
+				<ref bean="findFriendAccountAction"/>
+				<ref bean="completedFindFriendsAction"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 加载好友详情的actions -->
+	<bean id="loadFriendActions" class="org.okj.commons.service.action.Actions">
+		<property name="bizCode" value="QQ_LOAD_FRIEND"/>
+		<property name="actions">
+			<list>
+				<ref bean="findFriendsAction"/>
+				<ref bean="findFriendAccountAction"/>
+				<ref bean="completedFindFriendsAction"/>
+				<ref bean="loadFriendAction"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 加载好友个性化签名的actions -->
+	<bean id="loadFriendSignatureActions" class="org.okj.commons.service.action.Actions">
+		<property name="bizCode" value="QQ_LOAD_FRIEND_SIGNATURE"/>
+		<property name="actions">
+			<list>
+				<ref bean="findFriendsAction"/>
+				<ref bean="findFriendAccountAction"/>
+				<ref bean="completedFindFriendsAction"/>
+				<ref bean="loadQQSignatureAction"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 加载好友等级的actions -->
+	<bean id="loadFriendLevelActions" class="org.okj.commons.service.action.Actions">
+		<property name="bizCode" value="QQ_LOAD_FRIEND_LEVEL"/>
+		<property name="actions">
+			<list>
+				<ref bean="findFriendsAction"/>
+				<ref bean="findFriendAccountAction"/>
+				<ref bean="completedFindFriendsAction"/>
+				<ref bean="loadQQLevelAction"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 查询在线QQ好友列表的actions -->
+	<bean id="findOnlineFriendsActions" class="org.okj.commons.service.action.Actions">
+		<property name="bizCode" value="QQ_FIND_ONLINE_FRIENDS"/>
+		<property name="actions">
+			<list>
+				<ref bean="findFriendsAction"/>
+				<ref bean="findFriendAccountAction"/>
+				<ref bean="completedFindFriendsAction"/>
+				<ref bean="findOnlineFriendsAction"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 查找QQ群列表的actions -->
+	<bean id="findGroupsActions" class="org.okj.commons.service.action.Actions">
+		<property name="bizCode" value="QQ_FIND_GROUPS"/>
+		<property name="actions">
+			<list>
+				<ref bean="findQQGroupsAction"/>
+				<ref bean="loadQQGroupsNumberAction"/>
+				<ref bean="completedFindQQGroupsAction"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 变更状态的actions -->
+	<bean id="changeStatusActions" class="org.okj.commons.service.action.Actions">
+		<property name="bizCode" value="QQ_CHANGE_STATUS"/>
+		<property name="actions">
+			<list>
+				<ref bean="changeMemberStatusAction"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 发送QQ消息给好友的actions -->
+	<bean id="sendMessageToFriendActions" class="org.okj.commons.service.action.Actions">
+		<property name="bizCode" value="QQ_SEND_MESSAGE_TO_FRIEND"/>
+		<property name="actions">
+			<list>
+				<ref bean="sendMessageToFriendAction"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 发送QQ消息给好友群的actions -->
+	<bean id="sendMessageToGroupActions" class="org.okj.commons.service.action.Actions">
+		<property name="bizCode" value="QQ_SEND_MESSAGE_TO_GROUP"/>
+		<property name="actions">
+			<list>
+				<ref bean="sendMessageToGroupAction"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Action Executor -->
+	<bean id="actionsExecutor" class="org.okj.commons.service.action.SimpleActionsExecutor">
+		<property name="actions">
+			<list value-type="org.okj.commons.service.action.Actions">
+				<ref bean="loginActions"/>
+				<ref bean="logoutActions"/>
+				<ref bean="heartbeatActions"/>
+				<ref bean="findFriendsActions"/>
+				<ref bean="sendMessageToFriendActions"/>
+				<ref bean="sendMessageToGroupActions"/>
+				<ref bean="loadFriendActions"/>
+				<ref bean="loadFriendSignatureActions"/>
+				<ref bean="loadFriendLevelActions"/>
+				<ref bean="findOnlineFriendsActions"/>
+				<ref bean="findGroupsActions"/>
+				<ref bean="changeStatusActions"/>
+				<ref bean="receiveMsgActions"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="chatRobot" class="org.okj.commons.robot.ChatRobot">
+		<property name="proxyHost" value="www-proxy.ericsson.se:8080"/>
+	</bean>
+	
+	<bean id="config" class="org.okj.im.Config">
+	    <property name="commandAccount" value="31535883"/>
+	    <property name="account" value="1035571211"/>
+	    <property name="password" value="jatiloveyou"/>
+	    <property name="defautMsg" value="嗨"/>
+        <property name="msgs">
+            <list>
+                <value>嗨,在忙什么呢</value>
+                <value>你在广州哪里呀</value>
+            </list>
+        </property>
+    </bean>
+	
+	<bean id="webqqApp" class="org.okj.im.WebQQApp"/>
+	
+</beans>
